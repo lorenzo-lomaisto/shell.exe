@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Définition du nom du fichier CSV
+csv_file="users.csv"
+
+# Création du contenu du fichier CSV
+echo "Paul,Pogba,user" > "$csv_file"
+
+echo "Doe,John,admin" >> "$csv_file"
+
+echo "Smith,Jane,user" >> "$csv_file"
+
+
+
+# Affichage du message de confirmation
+echo "Le fichier CSV a été créé avec succès."

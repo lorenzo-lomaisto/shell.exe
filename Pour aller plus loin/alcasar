@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Vérification des arguments
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 email password"
+    exit 1
+fi
+
+# Variables d'entrée
+email=$1
+password=$2
+
+# URL d'authentification Alcasar
+url="https://alcasar/login"
+
+# Données d'authentification
+data="username=${email}&password=${password}&Submit=Submit"
+
+# Envoi de la requête POST pour l'authentification
+response=$(curl -s -X POST -d "${data}" "${url}")
+
+# Vérification de la réponse
+if [[ $response == *"Connexion réussie"* ]]; then
+    echo "Connexion réussie à Alcasar."
+else
+    echo "Échec de la connexion à Alcasar."
+fi
